@@ -1,4 +1,4 @@
-import { Download, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 const Hero = () => {
@@ -24,9 +24,7 @@ const Hero = () => {
                     <a href="#contact" className="px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-lg transition-all flex items-center gap-2">
                         <Mail size={18} /> Contact Me
                     </a>
-                    <a href="/resume.pdf" download className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg border border-slate-700 flex items-center gap-2 transition-all">
-                        <Download size={18} /> Resume
-                    </a>
+
                 </div>
             </div>
         </section>
