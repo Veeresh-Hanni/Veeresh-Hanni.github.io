@@ -12,7 +12,7 @@ const Footer = () => {
                 Say Hello
             </a>
             <p className="mt-12 text-slate-600 text-sm">
-                © {new Date().getFullYear()} {personalInfo.name}. All Rights Reserved.
+                © {new Date().getFullYear()} {personalInfo.name}. Open to Work.
             </p>
         </footer>
     );
