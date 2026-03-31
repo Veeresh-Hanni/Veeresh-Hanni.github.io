@@ -21,7 +21,7 @@ const Hero = () => {
                 </p>
 
                 <div className="flex gap-4 pt-4">
-                    <a href="#contact" className="px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-lg transition-all flex items-center gap-2">
+                    <a href="#/contact" className="px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-lg transition-all flex items-center gap-2">
                         <Mail size={18} /> Contact Me
                     </a>
 

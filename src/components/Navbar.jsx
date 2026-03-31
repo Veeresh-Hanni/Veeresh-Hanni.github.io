@@ -9,8 +9,8 @@ const Navbar = () => {
                     <img src={logo} alt="Veeresh Hanni" className="w-15 h-15 mr-2 inline-block bg-none rounded-2xl border-amber-50" />VH<span className="text-white">.</span>
                 </span>
                 <div className="flex gap-6 items-center">
-                    <a href="#projects" className="text-sm font-medium text-slate-400 hover:text-teal-400 transition-colors hidden sm:block">Work</a>
-                    <a href="#experience" className="text-sm font-medium text-slate-400 hover:text-teal-400 transition-colors hidden sm:block">Experience</a>
+                    <a href="#/projects" className="text-sm font-medium text-slate-400 hover:text-teal-400 transition-colors hidden sm:block">Work</a>
+                    <a href="#/experience" className="text-sm font-medium text-slate-400 hover:text-teal-400 transition-colors hidden sm:block">Experience</a>
                     <div className="h-4 w-px bg-slate-800 hidden sm:block"></div>
                     <div className="flex gap-4">
                         <a href={personalInfo.social.github} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors"><Github size={20} /></a>

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Award } from 'lucide-react';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
@@ -5,7 +6,25 @@ import Navbar from '../components/Navbar';
 import ProjectCard from '../components/ProjectCard';
 import { education, experience, projects, skills } from '../data/portfolioData';
 
-const Home = () => {
+const Home = ({ initialSection }) => {
+    useEffect(() => {
+        if (!initialSection) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        const section = document.getElementById(initialSection);
+        if (!section) {
+            return;
+        }
+
+        const timer = window.setTimeout(() => {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+
+        return () => window.clearTimeout(timer);
+    }, [initialSection]);
+
     return (
         <div className="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-teal-500/30 selection:text-teal-200">
             <Navbar />

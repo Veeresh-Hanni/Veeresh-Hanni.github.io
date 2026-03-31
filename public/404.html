@@ -5,8 +5,20 @@
     <meta charset="utf-8">
     <title>Page Not Found</title>
     <script>
-        // Redirect to home page for GitHub Pages with HashRouter
-        window.location.href = '/';
+        // Send unknown routes back through HashRouter so the SPA can render
+        // either the matching page or the React-level 404 screen.
+        (function () {
+            var path = window.location.pathname || '/';
+            var search = window.location.search || '';
+            var hash = window.location.hash || '';
+
+            if (path === '/' || path === '') {
+                window.location.replace('/#/');
+                return;
+            }
+
+            window.location.replace('/#' + path + search + hash);
+        })();
     </script>
 </head>
 
