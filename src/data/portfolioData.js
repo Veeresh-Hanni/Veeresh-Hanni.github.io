@@ -22,7 +22,7 @@ export const skills = [
         id: 1,
         category: "Languages",
         icon: Code2,
-        items: ["Python", "JavaScript (ES6+)", "Java", "SQL", "HTML5", "CSS3"]
+        items: ["Python", "Java", "JavaScript (ES6+)", "SQL", "HTML5", "CSS3"]
     },
     {
         id: 2,
@@ -34,7 +34,7 @@ export const skills = [
         id: 3,
         category: "Databases",
         icon: Database,
-        items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite", "MSSQL", "Neo4j"]
+        items: ["MySQL", "MongoDB", "MSSQL"]
     },
     {
         id: 4,
@@ -52,7 +52,7 @@ export const skills = [
         id: 6,
         category: "Security",
         icon: Code2,
-        items: ["AES-256 encryption", "Cryptography library", "Authentication workflows", "Bandit (Security audits)"]
+        items: ["AES-256 encryption", "Cryptography library", "Authentication workflows"]
     },
     {
         id: 7,
