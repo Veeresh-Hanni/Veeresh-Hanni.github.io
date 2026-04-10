@@ -1,43 +1,72 @@
-import { Github, Globe } from 'lucide-react';
+import { Github, Globe, Sparkles } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
+    const isFeatured = project.featured;
+
     return (
-        <div className={`group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all ${project.featured ? 'md:col-span-2' : ''}`}>
-            <div className="p-8 h-full flex flex-col">
-                <div className="flex justify-between items-start mb-4">
-                    <div>
-                        <span className="text-teal-500 text-xs font-bold uppercase tracking-wider mb-1 block">
-                            {project.role}
+        <div className={isFeatured ? 'card-featured' : 'card'} style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column' }}>
+            {/* Header */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
+                <div style={{ flex: 1 }}>
+                    {/* Featured badge */}
+                    {isFeatured && (
+                        <span className="badge badge-accent" style={{ marginBottom: 10, fontSize: 11 }}>
+                            <Sparkles size={11} /> Featured
                         </span>
-                        <h3 className="text-2xl font-bold text-white group-hover:text-teal-400 transition-colors">
-                            {project.title}
-                        </h3>
-                    </div>
-                    <div className="flex gap-3">
-                        {project.links.demo && (
-                            <a href={project.links.demo} target="_blank" rel="noreferrer" className="p-2 bg-slate-800 rounded-lg hover:bg-teal-500 hover:text-slate-900 transition-all">
-                                <Globe size={18} />
-                            </a>
-                        )}
-                        {project.links.github && (
-                            <a href={project.links.github} target="_blank" rel="noreferrer" className="p-2 bg-slate-800 rounded-lg hover:bg-white hover:text-slate-900 transition-all">
-                                <Github size={18} />
-                            </a>
-                        )}
-                    </div>
+                    )}
+                    <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 2 }}>
+                        {project.title}
+                    </h3>
+                    <p style={{ fontSize: 13, color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                        {project.subtitle}
+                    </p>
                 </div>
+                <div style={{ display: 'flex', gap: 8, marginLeft: 16 }}>
+                    {project.links.demo && (
+                        <a href={project.links.demo} target="_blank" rel="noreferrer"
+                            style={{ width: 34, height: 34, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', transition: 'all 0.2s' }}
+                            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-border)'; e.currentTarget.style.color = 'var(--accent-light)'; e.currentTarget.style.background = 'var(--accent-bg)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.background = 'transparent'; }}
+                        ><Globe size={15} /></a>
+                    )}
+                    {project.links.github && (
+                        <a href={project.links.github} target="_blank" rel="noreferrer"
+                            style={{ width: 34, height: 34, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', transition: 'all 0.2s' }}
+                            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--border-strong)'; e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.background = 'var(--bg-elevated)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.background = 'transparent'; }}
+                        ><Github size={15} /></a>
+                    )}
+                </div>
+            </div>
 
-                <p className="text-slate-400 leading-relaxed mb-6">
-                    {project.description}
-                </p>
+            {/* Role & Period */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
+                <span className="badge badge-neutral" style={{ fontSize: 11 }}>{project.role}</span>
+                <span style={{ fontSize: 12, fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', display: 'flex', alignItems: 'center' }}>{project.period}</span>
+            </div>
 
-                <div className="mt-auto pt-4 flex flex-wrap gap-2">
-                    {project.tech.map((t, i) => (
-                        <span key={i} className="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-mono rounded-md border border-slate-700/50">
-                            {t}
-                        </span>
+            {/* Description */}
+            <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: 18 }}>
+                {project.description}
+            </p>
+
+            {/* Achievements for featured */}
+            {isFeatured && project.achievements && (
+                <ul style={{ marginBottom: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                    {project.achievements.slice(0, 3).map((item, i) => (
+                        <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                            <span style={{ color: 'var(--accent)', marginTop: 6, flexShrink: 0, width: 5, height: 5, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block' }} />
+                            {item}
+                        </li>
                     ))}
-                </div>
+                </ul>
+            )}
+
+            {/* Tech stack */}
+            <div style={{ marginTop: 'auto', paddingTop: 16, borderTop: '1px solid var(--border)', display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                {project.tech.map((t, i) => (
+                    <span key={i} className="tech-tag">{t}</span>
+                ))}
             </div>
         </div>
     );

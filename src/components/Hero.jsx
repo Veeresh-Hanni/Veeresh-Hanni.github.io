@@ -1,31 +1,72 @@
-import { Mail } from 'lucide-react';
+import { Mail, Github, MapPin, ArrowDownRight } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 const Hero = () => {
     return (
-        <section className="flex flex-col md:flex-row gap-12 items-center py-20">
-            <div className="flex-1 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-400/10 text-teal-400 text-sm font-medium border border-teal-400/20">
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+        <section id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+            {/* Background glow */}
+            <div className="hero-glow" />
+            
+            {/* Dot grid overlay */}
+            <div className="dot-grid" style={{ position: 'absolute', inset: 0, opacity: 0.5, maskImage: 'radial-gradient(ellipse 60% 60% at 50% 40%, black, transparent)', WebkitMaskImage: 'radial-gradient(ellipse 60% 60% at 50% 40%, black, transparent)' }} />
+
+            <div style={{ position: 'relative', zIndex: 2, maxWidth: 860, margin: '0 auto', padding: '120px 24px 80px', width: '100%' }}>
+                {/* Badge */}
+                <div className="anim-fade-up anim-d1" style={{ marginBottom: 28 }}>
+                    <span className="badge badge-green" style={{ fontFamily: 'var(--font-mono)' }}>
+                        <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--green)', display: 'inline-block', animation: 'pulse-dot 2s ease-in-out infinite' }} />
+                        Open to work
                     </span>
-                    Open to Work
                 </div>
 
-                <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight">
-                    {personalInfo.name}
+                {/* Main heading */}
+                <h1 className="anim-fade-up anim-d2" style={{ fontSize: 'clamp(40px, 7vw, 72px)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.04em', marginBottom: 20 }}>
+                    <span className="text-gradient-hero">Full-Stack Developer</span>
+                    <br />
+                    <span style={{ color: 'var(--text-primary)' }}>&amp; Open Source Author</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed">
-                    {personalInfo.tagline}
+
+                {/* Summary */}
+                <p className="anim-fade-up anim-d3" style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--text-secondary)', maxWidth: 580, marginBottom: 36 }}>
+                    Creator of <a href="https://dbduck.org.in" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-light)', fontWeight: 600, borderBottom: '1px solid var(--accent-border)' }}>DBDuck</a> — 
+                    a unified Python API across 6 databases. Building scalable backend systems 
+                    and production-grade web applications.
                 </p>
 
-                <div className="flex gap-4 pt-4">
-                    <a href="#/contact" className="px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-lg transition-all flex items-center gap-2">
-                        <Mail size={18} /> Contact Me
+                {/* CTA Buttons */}
+                <div className="anim-fade-up anim-d4" style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 50 }}>
+                    <a href="#contact" className="btn btn-primary">
+                        <Mail size={15} /> Get in Touch
                     </a>
-
+                    <a href={personalInfo.social.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                        <Github size={15} /> GitHub
+                    </a>
                 </div>
+
+                {/* Stats */}
+                <div className="anim-fade-up anim-d5" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: 'var(--border)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
+                    {personalInfo.stats.map((stat, i) => (
+                        <div key={i} style={{ background: 'var(--bg-surface)', padding: '20px 16px', textAlign: 'center' }}>
+                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
+                                {stat.value}
+                            </div>
+                            <div style={{ fontSize: 11, fontWeight: 500, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 4 }}>
+                                {stat.label}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Location */}
+                <div className="anim-fade-up anim-d6" style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 24, fontSize: 13, color: 'var(--text-muted)' }}>
+                    <MapPin size={13} /> {personalInfo.location}
+                </div>
+            </div>
+
+            {/* Scroll hint */}
+            <div style={{ position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+                <span style={{ fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Scroll</span>
+                <ArrowDownRight size={14} style={{ color: 'var(--text-muted)', animation: 'pulse-dot 2s ease infinite' }} />
             </div>
         </section>
     );

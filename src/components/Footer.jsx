@@ -1,19 +1,63 @@
+import { Mail, Github, Linkedin, ExternalLink, ArrowUp } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 const Footer = () => {
     return (
-        <footer id="contact" className="py-20 border-t border-slate-800 text-center mt-20">
-            <h2 className="text-3xl font-bold text-white mb-6">Let's Build Something Scalable</h2>
-            <p className="text-slate-400 mb-8 max-w-lg mx-auto">
-                I am currently looking for full-time Software Engineering roles.
-                Reach out to discuss how my full-stack skills can help your team.
-            </p>
-            <a href={personalInfo.social.email} className="inline-block px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-lg transition-all mx-auto">
-                Say Hello
-            </a>
-            <p className="mt-12 text-slate-600 text-sm">
-                © {new Date().getFullYear()} {personalInfo.name}. Open to Work.
-            </p>
+        <footer id="contact" style={{ borderTop: '1px solid var(--border)' }}>
+            {/* CTA */}
+            <div style={{ maxWidth: 600, margin: '0 auto', padding: '80px 24px', textAlign: 'center' }}>
+                <span className="badge badge-accent" style={{ marginBottom: 20, fontSize: 11, fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
+                    Contact
+                </span>
+                <h2 style={{ fontSize: 36, fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.03em', marginBottom: 16, lineHeight: 1.15 }}>
+                    Let's build something<br />
+                    <span className="text-gradient-hero">together.</span>
+                </h2>
+                <p style={{ fontSize: 15, color: 'var(--text-muted)', marginBottom: 32, lineHeight: 1.7 }}>
+                    I'm currently looking for full-time Software Engineering roles. 
+                    Let me know how I can help your team build scalable systems.
+                </p>
+                <a href={personalInfo.social.email} className="btn btn-primary">
+                    <Mail size={15} /> Say Hello
+                </a>
+                <p style={{ marginTop: 12, fontSize: 13, fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
+                    {personalInfo.email}
+                </p>
+            </div>
+
+            {/* Bottom bar */}
+            <div style={{ borderTop: '1px solid var(--border)', padding: '20px 24px' }}>
+                <div style={{ maxWidth: 1120, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 16 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+                        <a href={personalInfo.social.github} target="_blank" rel="noreferrer"
+                            style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
+                            onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'}
+                            onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                        ><Github size={17} /></a>
+                        <a href={personalInfo.social.linkedin} target="_blank" rel="noreferrer"
+                            style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
+                            onMouseEnter={e => e.currentTarget.style.color = '#0a66c2'}
+                            onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                        ><Linkedin size={17} /></a>
+                        <a href={personalInfo.social.dbduck} target="_blank" rel="noreferrer"
+                            style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
+                            onMouseEnter={e => e.currentTarget.style.color = 'var(--accent-light)'}
+                            onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                        ><ExternalLink size={17} /></a>
+                    </div>
+                    <p style={{ fontSize: 12, color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                        © {new Date().getFullYear()} {personalInfo.name}
+                    </p>
+                    <button
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        style={{ width: 34, height: 34, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', background: 'transparent', color: 'var(--text-muted)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}
+                        onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-border)'; e.currentTarget.style.color = 'var(--accent-light)'; }}
+                        onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-muted)'; }}
+                    >
+                        <ArrowUp size={15} />
+                    </button>
+                </div>
+            </div>
         </footer>
     );
 };
