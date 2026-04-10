@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import SectionHeader from '../components/SectionHeader';
@@ -8,6 +8,7 @@ import ProjectCard from '../components/ProjectCard';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import EducationCard from '../components/EducationCard';
 import Footer from '../components/Footer';
+import NotFound from './NotFound';
 import {
     achievements,
     certifications,
@@ -17,8 +18,21 @@ import {
     skills,
 } from '../data/portfolioData';
 
+const VALID_SECTIONS = new Set(['about', 'skills', 'projects', 'experience', 'contact']);
+
 const Home = ({ initialSection }) => {
     const mainRef = useRef(null);
+    const [hashSection, setHashSection] = useState(() => {
+        const sectionId = window.location.hash.replace(/^#/, '').replace(/^\/+|\/+$/g, '');
+        return sectionId || '';
+    });
+
+    const isInvalidHash = Boolean(hashSection) && !VALID_SECTIONS.has(hashSection);
+
+    const handleBackHome = () => {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        setHashSection('');
+    };
 
     // Scroll reveal observer
     useEffect(() => {
@@ -38,17 +52,65 @@ const Home = ({ initialSection }) => {
         return () => observer.disconnect();
     }, []);
 
-    // Scroll to section
     useEffect(() => {
-        if (!initialSection) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            return;
+        const updateHashSection = () => {
+            const sectionId = window.location.hash.replace(/^#/, '').replace(/^\/+|\/+$/g, '');
+            setHashSection(sectionId || '');
+        };
+
+        updateHashSection();
+        window.addEventListener('hashchange', updateHashSection);
+
+        return () => window.removeEventListener('hashchange', updateHashSection);
+    }, []);
+
+    // Support both path-based section routes (/contact) and hash anchors (#contact).
+    useEffect(() => {
+        const scrollToSection = (sectionId) => {
+            if (!sectionId) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return null;
+            }
+
+            const section = document.getElementById(sectionId);
+            if (!section) return null;
+
+            return window.setTimeout(() => {
+                const navOffset = 76;
+                const top = section.getBoundingClientRect().top + window.scrollY - navOffset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }, 80);
+        };
+
+        if (isInvalidHash) {
+            return undefined;
         }
-        const section = document.getElementById(initialSection);
-        if (!section) return;
-        const timer = setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
-        return () => clearTimeout(timer);
-    }, [initialSection]);
+
+        let timer = scrollToSection(initialSection || hashSection);
+
+        const onHashChange = () => {
+            if (timer) {
+                window.clearTimeout(timer);
+            }
+            const nextSection = window.location.hash.replace(/^#/, '').replace(/^\/+|\/+$/g, '');
+            if (!nextSection || VALID_SECTIONS.has(nextSection)) {
+                timer = scrollToSection(nextSection);
+            }
+        };
+
+        window.addEventListener('hashchange', onHashChange);
+
+        return () => {
+            if (timer) {
+                window.clearTimeout(timer);
+            }
+            window.removeEventListener('hashchange', onHashChange);
+        };
+    }, [hashSection, initialSection, isInvalidHash]);
+
+    if (isInvalidHash) {
+        return <NotFound onBackHome={handleBackHome} />;
+    }
 
     return (
         <div ref={mainRef} style={{ background: 'var(--bg-base)', minHeight: '100vh' }}>

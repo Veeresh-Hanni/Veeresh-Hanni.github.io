@@ -5,19 +5,14 @@
     <meta charset="utf-8">
     <title>Page Not Found</title>
     <script>
-        // Send unknown routes back through HashRouter so the SPA can render
-        // either the matching page or the React-level 404 screen.
+        // Redirect GitHub Pages 404s to the SPA entry point while preserving
+        // the original path so BrowserRouter can render the correct screen.
         (function () {
             var path = window.location.pathname || '/';
             var search = window.location.search || '';
             var hash = window.location.hash || '';
-
-            if (path === '/' || path === '') {
-                window.location.replace('/#/');
-                return;
-            }
-
-            window.location.replace('/#' + path + search + hash);
+            var redirect = path + search + hash;
+            window.location.replace('/?p=' + encodeURIComponent(redirect));
         })();
     </script>
 </head>

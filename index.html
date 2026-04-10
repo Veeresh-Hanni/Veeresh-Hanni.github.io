@@ -28,6 +28,15 @@
   <meta name="google-adsense-account" content="ca-pub-4150162062497820">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4150162062497820"
     crossorigin="anonymous"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const redirectPath = params.get('p');
+      if (!redirectPath) return;
+
+      window.history.replaceState(null, '', decodeURIComponent(redirectPath));
+    })();
+  </script>
   <title>Veeresh Hanni - Full-Stack Developer & Open Source Author | DBDuck Creator</title>
 </head>
 

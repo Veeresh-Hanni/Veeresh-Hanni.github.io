@@ -1,7 +1,18 @@
 import { AlertCircle, Home } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function NotFound() {
+export default function NotFound({ onBackHome }) {
+    const navigate = useNavigate();
+
+    const handleBackHome = () => {
+        if (onBackHome) {
+            onBackHome();
+            return;
+        }
+
+        window.location.assign('/');
+    };
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center p-4">
             <div className="text-center">
@@ -23,13 +34,14 @@ export default function NotFound() {
                 </p>
 
                 <div className="space-y-4">
-                    <Link
-                        to="/"
+                    <button
+                        type="button"
+                        onClick={handleBackHome}
                         className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
                     >
                         <Home className="w-5 h-5" />
                         Back to Home
-                    </Link>
+                    </button>
 
                     <p className="text-slate-400 text-sm mt-8">
                         Error Code: 404 | Page Not Found
