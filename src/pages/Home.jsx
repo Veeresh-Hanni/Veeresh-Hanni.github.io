@@ -120,17 +120,17 @@ const Home = ({ initialSection }) => {
                 <Hero />
 
                 {/* About */}
-                <section id="about" className="reveal" style={{ maxWidth: 1120, margin: '0 auto', padding: '80px 24px' }}>
+                <section id="about" className="reveal" style={{ maxWidth: 1120, margin: '0 auto', padding: 'clamp(56px, 10vw, 80px) 20px' }}>
                     <div className="section-divider" style={{ marginBottom: 80 }} />
                     <SectionHeader label="About" title="Professional Summary" subtitle="Full-Stack Developer passionate about building scalable systems and open source." />
                     <About />
                 </section>
 
                 {/* Skills */}
-                <section id="skills" className="reveal" style={{ maxWidth: 1120, margin: '0 auto', padding: '0 24px 80px' }}>
+                <section id="skills" className="reveal" style={{ maxWidth: 1120, margin: '0 auto', padding: '0 20px clamp(56px, 10vw, 80px)' }}>
                     <div className="section-divider" style={{ marginBottom: 80 }} />
                     <SectionHeader label="Tech Stack" title="Skills & Technologies" subtitle="Tools and technologies I use to build production-grade applications." />
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 14 }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14 }}>
                         {skills.map((skill) => (
                             <SkillCard key={skill.id} skill={skill} />
                         ))}
@@ -138,7 +138,7 @@ const Home = ({ initialSection }) => {
                 </section>
 
                 {/* Projects */}
-                <section id="projects" className="reveal" style={{ maxWidth: 1120, margin: '0 auto', padding: '0 24px 80px' }}>
+                <section id="projects" className="reveal" style={{ maxWidth: 1120, margin: '0 auto', padding: '0 20px clamp(56px, 10vw, 80px)' }}>
                     <div className="section-divider" style={{ marginBottom: 80 }} />
                     <SectionHeader label="Projects" title="Selected Works" subtitle="Production-deployed applications and open-source tools." />
                     <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: 16 }}>
@@ -149,7 +149,7 @@ const Home = ({ initialSection }) => {
                 </section>
 
                 {/* Experience + Education */}
-                <section id="experience" className="reveal" style={{ maxWidth: 1120, margin: '0 auto', padding: '0 24px 80px' }}>
+                <section id="experience" className="reveal" style={{ maxWidth: 1120, margin: '0 auto', padding: '0 20px clamp(56px, 10vw, 80px)' }}>
                     <div className="section-divider" style={{ marginBottom: 80 }} />
                     <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr]" style={{ gap: 64 }}>
                         <div>

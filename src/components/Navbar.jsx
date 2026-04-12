@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Menu, X, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Menu, X, ExternalLink, Moon, Sun } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import { useTheme } from '../hooks/useTheme';
 
 const navLinks = [
     { label: 'About', href: '#about' },
@@ -13,6 +14,7 @@ const navLinks = [
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 40);
@@ -30,7 +32,7 @@ const Navbar = () => {
                 transition: 'all 0.3s ease',
             }}
         >
-            <div style={{ maxWidth: 1120, margin: '0 auto', padding: '0 24px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ maxWidth: 1120, margin: '0 auto', padding: '0 16px', minHeight: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 {/* Logo */}
                 <a href="#" style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 15, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
                     VH<span style={{ color: 'var(--accent)' }}>.</span>
@@ -48,7 +50,17 @@ const Navbar = () => {
                 </div>
 
                 {/* Right side */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }} className="hidden md:flex">
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }} className="hidden md:flex">
+                    {/* Theme Toggle */}
+                    <button
+                        onClick={toggleTheme}
+                        style={{ color: 'var(--text-muted)', background: 'none', border: 'none', cursor: 'pointer', padding: 6, borderRadius: 6, transition: 'color 0.2s' }}
+                        onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'}
+                        onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                    >
+                        {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
+                    </button>
                     <a href={personalInfo.social.github} target="_blank" rel="noreferrer"
                         style={{ color: 'var(--text-muted)', padding: 6, borderRadius: 6, transition: 'color 0.2s' }}
                         onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'}
@@ -65,7 +77,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile menu toggle */}
-                <button className="md:hidden" style={{ color: 'var(--text-secondary)', background: 'none', border: 'none', cursor: 'pointer' }}
+                <button className="md:hidden" style={{ color: 'var(--text-secondary)', background: 'none', border: 'none', cursor: 'pointer', padding: 8, marginRight: -8 }}
                     onClick={() => setOpen(!open)}>
                     {open ? <X size={22} /> : <Menu size={22} />}
                 </button>
@@ -73,13 +85,21 @@ const Navbar = () => {
 
             {/* Mobile menu */}
             {open && (
-                <div className="md:hidden" style={{ background: 'rgba(9,9,11,0.97)', borderTop: '1px solid var(--border)', padding: 20 }}>
+                <div className="md:hidden" style={{ background: 'var(--bg-surface)', borderTop: '1px solid var(--border)', padding: 16 }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                         {navLinks.map(l => (
                             <a key={l.label} href={l.href} onClick={() => setOpen(false)}
-                                style={{ fontSize: 14, color: 'var(--text-secondary)', fontWeight: 500 }}
+                                style={{ fontSize: 15, color: 'var(--text-secondary)', fontWeight: 500, padding: '6px 0' }}
                             >{l.label}</a>
                         ))}
+                        {/* Theme Toggle (Mobile) */}
+                        <button
+                            onClick={toggleTheme}
+                            style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 15, color: 'var(--text-secondary)', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', padding: '6px 0' }}
+                        >
+                            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                            {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                        </button>
                         <div style={{ display: 'flex', gap: 12, marginTop: 8 }}>
                             <a href={personalInfo.social.github} target="_blank" rel="noreferrer" style={{ color: 'var(--text-muted)' }}><Github size={18} /></a>
                             <a href={personalInfo.social.linkedin} target="_blank" rel="noreferrer" style={{ color: 'var(--text-muted)' }}><Linkedin size={18} /></a>

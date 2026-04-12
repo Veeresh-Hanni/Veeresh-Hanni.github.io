@@ -2,7 +2,7 @@ const ExperienceTimeline = ({ experience }) => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             {experience.map((exp) => (
-                <div key={exp.id} className="card" style={{ padding: '28px 32px' }}>
+                <div key={exp.id} className="card" style={{ padding: 'clamp(20px, 4.5vw, 32px)' }}>
                     {/* Header */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4, gap: 8 }}>
                         <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--text-primary)' }}>
@@ -13,7 +13,7 @@ const ExperienceTimeline = ({ experience }) => {
                         </span>
                     </div>
 
-                    <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 16 }}>
+                    <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 16, flexWrap: 'wrap' }}>
                         <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--accent-light)' }}>
                             {exp.company}
                         </span>

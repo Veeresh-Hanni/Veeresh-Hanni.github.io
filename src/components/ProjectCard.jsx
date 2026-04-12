@@ -4,9 +4,9 @@ const ProjectCard = ({ project }) => {
     const isFeatured = project.featured;
 
     return (
-        <div className={isFeatured ? 'card-featured' : 'card'} style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column' }}>
+        <div className={isFeatured ? 'card-featured' : 'card'} style={{ padding: 'clamp(20px, 4.5vw, 32px)', display: 'flex', flexDirection: 'column' }}>
             {/* Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16, gap: 12, flexWrap: 'wrap' }}>
                 <div style={{ flex: 1 }}>
                     {/* Featured badge */}
                     {isFeatured && (
@@ -14,14 +14,14 @@ const ProjectCard = ({ project }) => {
                             <Sparkles size={11} /> Featured
                         </span>
                     )}
-                    <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 2 }}>
+                    <h3 style={{ fontSize: 'clamp(18px, 4.5vw, 20px)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 2 }}>
                         {project.title}
                     </h3>
                     <p style={{ fontSize: 13, color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
                         {project.subtitle}
                     </p>
                 </div>
-                <div style={{ display: 'flex', gap: 8, marginLeft: 16 }}>
+                <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
                     {project.links.demo && (
                         <a href={project.links.demo} target="_blank" rel="noreferrer"
                             style={{ width: 34, height: 34, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', transition: 'all 0.2s' }}
@@ -46,7 +46,7 @@ const ProjectCard = ({ project }) => {
             </div>
 
             {/* Description */}
-            <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: 18 }}>
+            <p style={{ fontSize: 'clamp(13px, 3.6vw, 14px)', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: 18 }}>
                 {project.description}
             </p>
 

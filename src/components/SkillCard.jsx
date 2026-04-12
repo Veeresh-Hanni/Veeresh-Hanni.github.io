@@ -1,7 +1,7 @@
 const SkillCard = ({ skill }) => {
     const Icon = skill.icon;
     return (
-        <div className="card" style={{ padding: '24px 28px' }}>
+        <div className="card" style={{ padding: 'clamp(18px, 4vw, 28px)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
                 <div style={{ width: 32, height: 32, borderRadius: 8, background: 'var(--accent-bg)', border: '1px solid var(--accent-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-light)' }}>
                     <Icon size={15} />

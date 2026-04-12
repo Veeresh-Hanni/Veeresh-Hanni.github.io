@@ -11,10 +11,10 @@ const EducationCard = ({ education, certifications, achievements }) => {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                     {education.map((edu) => (
-                        <div key={edu.id} className="card" style={{ padding: '20px 24px' }}>
+                        <div key={edu.id} className="card" style={{ padding: 'clamp(18px, 4vw, 24px)' }}>
                             <h4 style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>{edu.degree}</h4>
                             <p style={{ fontSize: 13, color: 'var(--text-muted)', marginBottom: 8 }}>{edu.school}</p>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
                                 <span className={edu.highlight ? "badge badge-accent" : "badge badge-neutral"} style={{ fontSize: 11, fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
                                     {edu.details}
                                 </span>
@@ -33,7 +33,7 @@ const EducationCard = ({ education, certifications, achievements }) => {
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 10 }}>
                     {certifications.map((cert) => (
-                        <div key={cert.id} className="card" style={{ padding: '16px 20px' }}>
+                        <div key={cert.id} className="card" style={{ padding: 'clamp(16px, 4vw, 20px)' }}>
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
                                 <span style={{ fontSize: 18, lineHeight: 1 }}>{cert.icon}</span>
                                 <div>

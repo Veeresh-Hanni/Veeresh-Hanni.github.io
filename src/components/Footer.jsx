@@ -5,29 +5,29 @@ const Footer = () => {
     return (
         <footer id="contact" style={{ borderTop: '1px solid var(--border)' }}>
             {/* CTA */}
-            <div style={{ maxWidth: 600, margin: '0 auto', padding: '80px 24px', textAlign: 'center' }}>
+            <div style={{ maxWidth: 600, margin: '0 auto', padding: 'clamp(56px, 12vw, 80px) 20px', textAlign: 'center' }}>
                 <span className="badge badge-accent" style={{ marginBottom: 20, fontSize: 11, fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
                     Contact
                 </span>
-                <h2 style={{ fontSize: 36, fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.03em', marginBottom: 16, lineHeight: 1.15 }}>
+                <h2 style={{ fontSize: 'clamp(28px, 8vw, 36px)', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.03em', marginBottom: 16, lineHeight: 1.15 }}>
                     Let's build something<br />
                     <span className="text-gradient-hero">together.</span>
                 </h2>
-                <p style={{ fontSize: 15, color: 'var(--text-muted)', marginBottom: 32, lineHeight: 1.7 }}>
+                <p style={{ fontSize: 'clamp(14px, 3.8vw, 15px)', color: 'var(--text-muted)', marginBottom: 28, lineHeight: 1.7 }}>
                     I'm currently looking for full-time Software Engineering roles. 
                     Let me know how I can help your team build scalable systems.
                 </p>
                 <a href={personalInfo.social.email} className="btn btn-primary">
                     <Mail size={15} /> Say Hello
                 </a>
-                <p style={{ marginTop: 12, fontSize: 13, fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
+                <p style={{ marginTop: 12, fontSize: 13, fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', overflowWrap: 'anywhere' }}>
                     {personalInfo.email}
                 </p>
             </div>
 
             {/* Bottom bar */}
             <div style={{ borderTop: '1px solid var(--border)', padding: '20px 24px' }}>
-                <div style={{ maxWidth: 1120, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 16 }}>
+                <div className="mobile-stack-row mobile-center-text" style={{ maxWidth: 1120, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 16 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
                         <a href={personalInfo.social.github} target="_blank" rel="noreferrer"
                             style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}

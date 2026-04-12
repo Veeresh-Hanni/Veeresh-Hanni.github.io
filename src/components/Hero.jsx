@@ -3,16 +3,16 @@ import { personalInfo } from '../data/portfolioData';
 
 const Hero = () => {
     return (
-        <section id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+        <section id="hero" style={{ position: 'relative', minHeight: '100svh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
             {/* Background glow */}
             <div className="hero-glow" />
             
             {/* Dot grid overlay */}
             <div className="dot-grid" style={{ position: 'absolute', inset: 0, opacity: 0.5, maskImage: 'radial-gradient(ellipse 60% 60% at 50% 40%, black, transparent)', WebkitMaskImage: 'radial-gradient(ellipse 60% 60% at 50% 40%, black, transparent)' }} />
 
-            <div style={{ position: 'relative', zIndex: 2, maxWidth: 860, margin: '0 auto', padding: '120px 24px 80px', width: '100%' }}>
+            <div style={{ position: 'relative', zIndex: 2, maxWidth: 860, margin: '0 auto', padding: 'clamp(96px, 18vw, 120px) 20px clamp(56px, 10vw, 80px)', width: '100%' }}>
                 {/* Badge */}
-                <div className="anim-fade-up anim-d1" style={{ marginBottom: 28 }}>
+                <div className="anim-fade-up anim-d1" style={{ marginBottom: 24 }}>
                     <span className="badge badge-green" style={{ fontFamily: 'var(--font-mono)' }}>
                         <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--green)', display: 'inline-block', animation: 'pulse-dot 2s ease-in-out infinite' }} />
                         Open to work
@@ -27,14 +27,14 @@ const Hero = () => {
                 </h1>
 
                 {/* Summary */}
-                <p className="anim-fade-up anim-d3" style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--text-secondary)', maxWidth: 580, marginBottom: 36 }}>
+                <p className="anim-fade-up anim-d3" style={{ fontSize: 'clamp(15px, 3.8vw, 17px)', lineHeight: 1.7, color: 'var(--text-secondary)', maxWidth: 580, marginBottom: 32 }}>
                     Creator of <a href="https://dbduck.org.in" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-light)', fontWeight: 600, borderBottom: '1px solid var(--accent-border)' }}>DBDuck</a> — 
                     a unified Python API across 6 databases. Building scalable backend systems 
                     and production-grade web applications.
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="anim-fade-up anim-d4" style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 50 }}>
+                <div className="anim-fade-up anim-d4" style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 40 }}>
                     <a href="#contact" className="btn btn-primary">
                         <Mail size={15} /> Get in Touch
                     </a>
@@ -44,13 +44,13 @@ const Hero = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="anim-fade-up anim-d5" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: 'var(--border)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
+                <div className="anim-fade-up anim-d5" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 1, background: 'var(--border)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
                     {personalInfo.stats.map((stat, i) => (
-                        <div key={i} style={{ background: 'var(--bg-surface)', padding: '20px 16px', textAlign: 'center' }}>
-                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
+                        <div key={i} style={{ background: 'var(--bg-surface)', padding: '18px 14px', textAlign: 'center' }}>
+                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(20px, 5vw, 24px)', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
                                 {stat.value}
                             </div>
-                            <div style={{ fontSize: 11, fontWeight: 500, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 4 }}>
+                            <div style={{ fontSize: 11, fontWeight: 500, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 4, lineHeight: 1.5 }}>
                                 {stat.label}
                             </div>
                         </div>
@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
 
             {/* Scroll hint */}
-            <div style={{ position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+            <div className="mobile-hidden" style={{ position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
                 <span style={{ fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Scroll</span>
                 <ArrowDownRight size={14} style={{ color: 'var(--text-muted)', animation: 'pulse-dot 2s ease infinite' }} />
             </div>
