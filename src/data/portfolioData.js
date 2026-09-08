@@ -1,4 +1,4 @@
-import { Code2, Cpu, Database, Terminal, Shield, BookOpen } from 'lucide-react';
+import { BookOpen, Code2, Cpu, Database, Shield, Terminal } from 'lucide-react';
 
 export const personalInfo = {
     name: "Veeresh Hanni",
@@ -12,7 +12,10 @@ export const personalInfo = {
         linkedin: "https://linkedin.com/in/veeresh-hanni-9775ba33b/",
         github: "https://github.com/veeresh-hanni",
         dbduck: "https://dbduck.org.in",
-        email: "mailto:veereshhanni347@gmail.com"
+        email: "mailto:veereshhanni347@gmail.com",
+        hackerank:"https://www.hackerrank.com/profile/veereshhanni",
+        leetcode: "https://leetcode.com/u/Veeresh_Hanni",
+        credlybadges:"https://www.credly.com/users/veeresh-hanni/badges/credly",
     },
     professionalSummary: "Full-Stack Developer and open-source author with hands-on experience in Python, Django, React, MySQL, and MongoDB. Creator of DBDuck — a production-deployed open-source Python library providing a unified API across 6 databases (PostgreSQL, MySQL, SQLite, MSSQL, MongoDB, Neo4j) — with a live documentation site at dbduck.org.in. Internship experience delivering full-stack features for a real-time fintech application. CGPA 9.5 in Computer Science with a strong foundation in DSA, REST APIs, and Docker-based deployments. Seeking a Software Developer / Full Stack Developer role to build scalable backend systems and production-grade web applications.",
     stats: [
@@ -69,6 +72,43 @@ export const skills = [
 ];
 
 export const projects = [
+    {
+        id: 5,
+        title: "Duckpad Editor",
+        subtitle: "Cross-platform Text Editor",
+        role: "Creator & Maintainer",
+        tech: ["Python", "PyQt5", "Markdown", "Desktop"],
+        description: "A fast, cross-platform Markdown,Text editor built with Python and PyQt5, with native desktop releases for Windows, macOS, and Linux. Download the latest v1.0.5 build for your system.",
+        period: "2026 – Present",
+        links: {
+            demo: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/latest",
+            github: "https://github.com/Veeresh-Hanni/Duckpad-Editor",
+            downloads: [
+                {
+                    label: "Windows",
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/DuckPad_Editor_Setup.exe"
+                },
+                {
+                    label: "macOS",
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/DuckPad_Editor-macos.dmg"
+                },
+                {
+                    label: "Linux DEB",
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/duckpad-editor_1.0.5_amd64.deb"
+                },
+                {
+                    label: "Linux RPM",
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/duckpad-editor-1.0.5-1.x86_64.rpm"
+                },
+                {
+                    label: "Linux",
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/DuckPad_Editor-linux.tar.gz"
+                }
+            ]
+        },
+        featured: true,
+        color: "amber"
+    },
     {
         id: 1,
         title: "DBDuck",

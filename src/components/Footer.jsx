@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, ExternalLink, ArrowUp } from 'lucide-react';
+import { ArrowUp, ExternalLink, Github, Linkedin, Mail } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 const Footer = () => {
@@ -33,17 +33,32 @@ const Footer = () => {
                             style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
                             onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'}
                             onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
-                        ><Github size={17} /></a>
+                        title="GitHub profile"><Github size={17} /></a>
                         <a href={personalInfo.social.linkedin} target="_blank" rel="noreferrer"
                             style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
                             onMouseEnter={e => e.currentTarget.style.color = '#0a66c2'}
                             onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
-                        ><Linkedin size={17} /></a>
+                        title="LinkedIn Profile"><Linkedin size={17} /></a>
+                        <a href={personalInfo.social.hackerank} target="_blank" rel="noreferrer"
+                            style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
+                            onMouseEnter={e => e.currentTarget.style.color = '#0a66c2'}
+                            onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                        title="HackerRank Profile"><ExternalLink size={17} /></a>
+                        <a href={personalInfo.social.leetcode} target="_blank" rel="noreferrer"
+                            style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
+                            onMouseEnter={e => e.currentTarget.style.color = '#0a66c2'}
+                            onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                        title="Leetcode Profile"><ExternalLink size={17} /></a>
+                        <a href={personalInfo.social.credlybadges} target="_blank" rel="noreferrer"
+                            style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
+                            onMouseEnter={e => e.currentTarget.style.color = '#0a66c2'}
+                            onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                        title="Badges"><ExternalLink size={17} /></a>
                         <a href={personalInfo.social.dbduck} target="_blank" rel="noreferrer"
                             style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
                             onMouseEnter={e => e.currentTarget.style.color = 'var(--accent-light)'}
                             onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
-                        ><ExternalLink size={17} /></a>
+                        title="DBDuck open source python ORM library docs site"><ExternalLink size={17} /></a>
                     </div>
                     <p style={{ fontSize: 12, color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
                         © {new Date().getFullYear()} {personalInfo.name}

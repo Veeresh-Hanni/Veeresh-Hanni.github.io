@@ -1,4 +1,4 @@
-import { Mail, Github, MapPin, ArrowDownRight } from 'lucide-react';
+import { ArrowDownRight, Github, Mail, MapPin } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 const Hero = () => {
@@ -35,7 +35,7 @@ const Hero = () => {
 
                 {/* CTA Buttons */}
                 <div className="anim-fade-up anim-d4" style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 40 }}>
-                    <a href="#contact" className="btn btn-primary">
+                    <a href="mailto:veereshhanni347@gmail.com" className="btn btn-primary">
                         <Mail size={15} /> Get in Touch
                     </a>
                     <a href={personalInfo.social.github} target="_blank" rel="noreferrer" className="btn btn-secondary">

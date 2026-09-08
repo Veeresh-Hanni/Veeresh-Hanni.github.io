@@ -1,4 +1,4 @@
-import { Github, Globe, Sparkles } from 'lucide-react';
+import { Download, Github, Globe, Sparkles } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
     const isFeatured = project.featured;
@@ -60,6 +60,23 @@ const ProjectCard = ({ project }) => {
                         </li>
                     ))}
                 </ul>
+            )}
+
+            {project.links.downloads && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
+                    {project.links.downloads.map((download) => (
+                        <a
+                            key={download.label}
+                            href={download.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn btn-secondary"
+                            style={{ fontSize: 12, padding: '8px 10px' }}
+                        >
+                            <Download size={13} /> {download.label}
+                        </a>
+                    ))}
+                </div>
             )}
 
             {/* Tech stack */}
