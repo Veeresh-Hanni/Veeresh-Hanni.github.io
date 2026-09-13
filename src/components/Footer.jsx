@@ -1,4 +1,4 @@
-import { ArrowUp, ExternalLink, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUp, ExternalLink, FileText, Github, Linkedin, Mail } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 const Footer = () => {
@@ -14,12 +14,17 @@ const Footer = () => {
                     <span className="text-gradient-hero">together.</span>
                 </h2>
                 <p style={{ fontSize: 'clamp(14px, 3.8vw, 15px)', color: 'var(--text-muted)', marginBottom: 28, lineHeight: 1.7 }}>
-                    I'm currently looking for full-time Software Engineering roles. 
-                    Let me know how I can help your team build scalable systems.
+                    I'm available for freelance projects, software development internships, 
+                    and remote full-stack or backend roles.
                 </p>
-                <a href={personalInfo.social.email} className="btn btn-primary">
-                    <Mail size={15} /> Say Hello
-                </a>
+                <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 10 }}>
+                    <a href={personalInfo.social.email} className="btn btn-primary">
+                        <Mail size={15} /> Hire Me
+                    </a>
+                    <a href={personalInfo.resume} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                        <FileText size={15} /> Resume
+                    </a>
+                </div>
                 <p style={{ marginTop: 12, fontSize: 13, fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', overflowWrap: 'anywhere' }}>
                     {personalInfo.email}
                 </p>

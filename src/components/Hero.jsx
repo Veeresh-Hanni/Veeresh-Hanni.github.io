@@ -1,4 +1,4 @@
-import { ArrowDownRight, Github, Mail, MapPin } from 'lucide-react';
+import { ArrowDownRight, FileText, Github, Mail, MapPin } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
                 <div className="anim-fade-up anim-d1" style={{ marginBottom: 24 }}>
                     <span className="badge badge-green" style={{ fontFamily: 'var(--font-mono)' }}>
                         <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--green)', display: 'inline-block', animation: 'pulse-dot 2s ease-in-out infinite' }} />
-                        Open to work
+                        Open to freelance, internships & remote roles
                     </span>
                 </div>
 
@@ -36,7 +36,10 @@ const Hero = () => {
                 {/* CTA Buttons */}
                 <div className="anim-fade-up anim-d4" style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 40 }}>
                     <a href="mailto:veereshhanni347@gmail.com" className="btn btn-primary">
-                        <Mail size={15} /> Get in Touch
+                        <Mail size={15} /> Hire Me
+                    </a>
+                    <a href={personalInfo.resume} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                        <FileText size={15} /> Resume
                     </a>
                     <a href={personalInfo.social.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
                         <Github size={15} /> GitHub

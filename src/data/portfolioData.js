@@ -1,4 +1,4 @@
-import { BookOpen, Code2, Cpu, Database, Shield, Terminal } from 'lucide-react';
+import { BookOpen, BriefcaseBusiness, Code2, Cpu, Database, FileCode2, Laptop, PenTool, Rocket, ServerCog, Shield, Terminal } from 'lucide-react';
 
 export const personalInfo = {
     name: "Veeresh Hanni",
@@ -8,6 +8,7 @@ export const personalInfo = {
     phone: "+91 8151858969",
     location: "Gadag, India",
     portfolio: "veereshhanni.me",
+    resume: "/Veeresh_Hanni_Resume.pdf",
     social: {
         linkedin: "https://linkedin.com/in/veeresh-hanni-9775ba33b/",
         github: "https://github.com/veeresh-hanni",
@@ -17,7 +18,7 @@ export const personalInfo = {
         leetcode: "https://leetcode.com/u/Veeresh_Hanni",
         credlybadges:"https://www.credly.com/users/veeresh-hanni/badges/credly",
     },
-    professionalSummary: "Full-Stack Developer and open-source author with hands-on experience in Python, Django, React, MySQL, and MongoDB. Creator of DBDuck — a production-deployed open-source Python library providing a unified API across 6 databases (PostgreSQL, MySQL, SQLite, MSSQL, MongoDB, Neo4j) — with a live documentation site at dbduck.org.in. Internship experience delivering full-stack features for a real-time fintech application. CGPA 9.5 in Computer Science with a strong foundation in DSA, REST APIs, and Docker-based deployments. Seeking a Software Developer / Full Stack Developer role to build scalable backend systems and production-grade web applications.",
+    professionalSummary: "Full-Stack Developer and open-source author with hands-on experience in Python, Django, React, Next.js, MySQL, PostgreSQL, and MongoDB. Creator of DBDuck — a production-deployed open-source Python library providing a unified API across 6 databases (PostgreSQL, MySQL, SQLite, MSSQL, MongoDB, Neo4j) — with a live documentation site at dbduck.org.in. Internship experience delivering React, Next.js, Django, and fintech product features. CGPA 9.5 in Computer Science with a strong foundation in DSA, REST APIs, Docker-based deployments, and secure application design. Available for freelance projects, remote software roles, and software development internships.",
     stats: [
         { label: "Databases Unified", value: "6" },
         { label: "Boilerplate Reduced", value: "70%" },
@@ -37,13 +38,13 @@ export const skills = [
         id: 2,
         category: "Frameworks & Libraries",
         icon: Terminal,
-        items: ["Django", "React.js", "Django REST Framework"]
+        items: ["Django", "React.js", "Next.js", "Django REST Framework"]
     },
     {
         id: 3,
         category: "Databases",
         icon: Database,
-        items: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "MSSQL"]
+        items: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "MSSQL", "Neo4j"]
     },
     {
         id: 4,
@@ -68,6 +69,85 @@ export const skills = [
         category: "CS Fundamentals",
         icon: BookOpen,
         items: ["DSA", "OOP", "DBMS", "Operating Systems", "Computer Networks", "Agile/Scrum"]
+    }
+];
+
+export const services = [
+    {
+        id: 1,
+        title: "Full-Stack Web Applications",
+        icon: Laptop,
+        summary: "Professional React, Next.js, Django, and REST API development for dashboards, internal tools, MVPs, and production web apps.",
+        skills: ["React", "Next.js", "Django", "DRF", "REST APIs"]
+    },
+    {
+        id: 2,
+        title: "Backend & Database Engineering",
+        icon: ServerCog,
+        summary: "Scalable backend systems with clean data models, ORM design, query optimization, and multi-database integration.",
+        skills: ["Python", "SQL", "PostgreSQL", "MySQL", "MongoDB"]
+    },
+    {
+        id: 3,
+        title: "Frontend UI Implementation",
+        icon: FileCode2,
+        summary: "Responsive, polished interfaces built from designs or existing pages with consistent components and smooth user flows.",
+        skills: ["JavaScript", "HTML5", "CSS3", "lucide-react", "Accessibility"]
+    },
+    {
+        id: 4,
+        title: "Security & Code Quality",
+        icon: Shield,
+        summary: "Security-focused improvements for authentication, encrypted data storage, vulnerability fixes, testing, and CI/CD workflows.",
+        skills: ["AES-256", "Auth", "Bandit", "GitHub Actions", "Docker"]
+    }
+];
+
+export const blogs = [
+    {
+        id: 1,
+        title: "Building DBDuck: One Python API Across 6 Databases",
+        category: "Open Source",
+        excerpt: "A technical look at designing a Universal Data Object Model, reducing database-specific boilerplate, and keeping backend code portable.",
+        topics: ["Python", "ORM", "Databases"],
+        href: "https://dbduck.org.in"
+    },
+    {
+        id: 2,
+        title: "How I Approach Full-Stack Performance in Django + React Apps",
+        category: "Engineering",
+        excerpt: "Lessons from optimizing REST APIs, improving query paths, and building frontend workflows that stay fast as product features grow.",
+        topics: ["Django", "React", "APIs"],
+        href: `mailto:${personalInfo.email}?subject=Blog%20collaboration%20with%20Veeresh%20Hanni`
+    },
+    {
+        id: 3,
+        title: "Secure AI Chat Architecture with Encrypted Message Storage",
+        category: "Security",
+        excerpt: "Notes from Pingone on hybrid database design, encrypted chat storage, and designing safer backend flows for AI applications.",
+        topics: ["AI Apps", "Encryption", "MongoDB"],
+        href: "https://pingone.onrender.com"
+    }
+];
+
+export const hireOptions = [
+    {
+        id: 1,
+        title: "Freelance Projects",
+        icon: BriefcaseBusiness,
+        description: "Available for MVPs, portfolio sites, dashboards, backend APIs, database work, and feature delivery for early-stage products."
+    },
+    {
+        id: 2,
+        title: "Remote Software Roles",
+        icon: Rocket,
+        description: "Open to remote Software Developer and Full-Stack Developer opportunities focused on production web apps and backend systems."
+    },
+    {
+        id: 3,
+        title: "Internships",
+        icon: PenTool,
+        description: "Interested in software development internships where I can contribute React, Django, API, database, and product engineering skills."
     }
 ];
 
@@ -214,6 +294,19 @@ export const experience = [
     },
     {
         id: 2,
+        role: "React Web Developer Intern",
+        company: "Zetpeak",
+        type: "Internship",
+        period: "Apr 2026 – Jun 2026",
+        location: "Remote",
+        achievements: [
+            "Built an interactive, gamified product roadmap page in React with animated milestone nodes for stakeholder-facing feature timelines.",
+            "Converted a static HTML page into a Next.js page and added localStorage-backed task-management functionality.",
+            "Improved UI consistency and navigation by integrating lucide-react icons across the application."
+        ]
+    },
+    {
+        id: 3,
         role: "Software Development Engineer Intern",
         company: "Bluestock Fintech",
         type: "Internship",
@@ -269,7 +362,7 @@ export const certifications = [
     {
         id: 4,
         title: "HackerRank Skill Certificates",
-        description: "Python (Gold Badge), SQL (Gold Badge)",
+        description: "Python (Gold Badge), SQL (Gold Badge), REST API (Intermediate)",
         icon: "🏅"
     }
 ];
@@ -284,13 +377,13 @@ export const achievements = [
     {
         id: 2,
         title: "Hackathon Participation",
-        description: "Participated in Odoo Hackathon 2025 and Google Baseline Tooling Hackathon.",
+        description: "Participated in Odoo Hackathon 2025 & 2026 and Google Baseline Tooling Hackathon.",
         icon: "🏆"
     },
     {
         id: 3,
         title: "Open Source Contribution",
-        description: "Published and maintained DBDuck (v0.3.0) with full security audit, documentation site, and GitHub Sponsors integration.",
+        description: "Published and maintained DBDuck (v0.4.4+) with full security audit, documentation site, and GitHub Sponsors integration.",
         icon: "💻"
     }
 ];

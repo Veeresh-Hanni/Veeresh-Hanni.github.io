@@ -6,8 +6,11 @@ import { useTheme } from '../hooks/useTheme';
 const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
+    { label: 'Services', href: '#services' },
     { label: 'Projects', href: '#projects' },
     { label: 'Experience', href: '#experience' },
+    { label: 'Blogs', href: '#blogs' },
+    { label: 'Hire', href: '#hire' },
     { label: 'Contact', href: '#contact' },
 ];
 
@@ -39,7 +42,7 @@ const Navbar = () => {
                 </a>
 
                 {/* Desktop links */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 28 }} className="hidden md:flex">
+                <div style={{ display: 'flex', alignItems: 'center', gap: 20 }} className="hidden md:flex">
                     {navLinks.map(l => (
                         <a key={l.label} href={l.href}
                             style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-muted)', transition: 'color 0.2s' }}
