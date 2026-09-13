@@ -86,23 +86,23 @@ export const projects = [
             downloads: [
                 {
                     label: "Windows",
-                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/DuckPad_Editor_Setup.exe"
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.6/DuckPad_Editor_Setup.exe"
                 },
                 {
                     label: "macOS",
-                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/DuckPad_Editor-macos.dmg"
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.6/DuckPad_Editor-macos.dmg"
                 },
                 {
                     label: "Linux DEB",
-                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/duckpad-editor_1.0.5_amd64.deb"
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.6/duckpad-editor_1.0.6_amd64.deb"
                 },
                 {
                     label: "Linux RPM",
-                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/duckpad-editor-1.0.5-1.x86_64.rpm"
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.6/duckpad-editor-1.0.6-1.x86_64.rpm"
                 },
                 {
                     label: "Linux",
-                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.5/DuckPad_Editor-linux.tar.gz"
+                    href: "https://github.com/Veeresh-Hanni/Duckpad-Editor/releases/download/v1.0.6/DuckPad_Editor-linux.tar.gz"
                 }
             ]
         },
