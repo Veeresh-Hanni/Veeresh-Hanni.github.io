@@ -14,8 +14,8 @@ const Footer = () => {
                     <span className="text-gradient-hero">together.</span>
                 </h2>
                 <p style={{ fontSize: 'clamp(14px, 3.8vw, 15px)', color: 'var(--text-muted)', marginBottom: 28, lineHeight: 1.7 }}>
-                    I'm available for freelance projects, software development internships, 
-                    and remote full-stack or backend roles.
+                    I'm available for full-time SDE roles, full-stack developer roles, 
+                    freelance projects, internships, and remote backend work.
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 10 }}>
                     <a href={personalInfo.social.email} className="btn btn-primary">

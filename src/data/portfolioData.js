@@ -18,7 +18,7 @@ export const personalInfo = {
         leetcode: "https://leetcode.com/u/Veeresh_Hanni",
         credlybadges:"https://www.credly.com/users/veeresh-hanni/badges/credly",
     },
-    professionalSummary: "Full-Stack Developer and open-source author with hands-on experience in Python, Django, React, Next.js, MySQL, PostgreSQL, and MongoDB. Creator of DBDuck — a production-deployed open-source Python library providing a unified API across 6 databases (PostgreSQL, MySQL, SQLite, MSSQL, MongoDB, Neo4j) — with a live documentation site at dbduck.org.in. Internship experience delivering React, Next.js, Django, and fintech product features. CGPA 9.5 in Computer Science with a strong foundation in DSA, REST APIs, Docker-based deployments, and secure application design. Available for freelance projects, remote software roles, and software development internships.",
+    professionalSummary: "Full-Stack Developer and open-source author with hands-on experience in Python, Django, React, Next.js, MySQL, PostgreSQL, and MongoDB. Creator of DBDuck — a production-deployed open-source Python library providing a unified API across 6 databases (PostgreSQL, MySQL, SQLite, MSSQL, MongoDB, Neo4j) — with a live documentation site at dbduck.org.in. Internship experience delivering React, Next.js, Django, and fintech product features. CGPA 9.5 in Computer Science with a strong foundation in DSA, REST APIs, Docker-based deployments, and secure application design. Available for full-time SDE roles, full-stack developer roles, freelance projects, remote software work, and software development internships.",
     stats: [
         { label: "Databases Unified", value: "6" },
         { label: "Boilerplate Reduced", value: "70%" },
@@ -139,9 +139,9 @@ export const hireOptions = [
     },
     {
         id: 2,
-        title: "Remote Software Roles",
+        title: "Full-Time SDE & Full-Stack Roles",
         icon: Rocket,
-        description: "Open to remote Software Developer and Full-Stack Developer opportunities focused on production web apps and backend systems."
+        description: "Open to full-time SDE, Software Developer, and Full-Stack Developer opportunities focused on production web apps and backend systems."
     },
     {
         id: 3,

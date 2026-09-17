@@ -15,7 +15,7 @@ const Hero = () => {
                 <div className="anim-fade-up anim-d1" style={{ marginBottom: 24 }}>
                     <span className="badge badge-green" style={{ fontFamily: 'var(--font-mono)' }}>
                         <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--green)', display: 'inline-block', animation: 'pulse-dot 2s ease-in-out infinite' }} />
-                        Open to freelance, internships & remote roles
+                        Open to full-time SDE, full-stack & remote roles
                     </span>
                 </div>
 

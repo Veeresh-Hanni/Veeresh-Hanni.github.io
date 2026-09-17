@@ -235,7 +235,7 @@ const Home = ({ initialSection }) => {
                                     Hire Me
                                 </span>
                                 <h2 style={{ fontSize: 'clamp(26px, 6vw, 38px)', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.03em', marginBottom: 14, lineHeight: 1.15 }}>
-                                    Available for freelance, internships, and remote software work.
+                                    Available for full-time SDE, full-stack, freelance, internship, and remote software work.
                                 </h2>
                                 <p style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: 24 }}>
                                     I can help teams ship full-stack features, backend APIs, database-driven apps, UI implementations, and secure product workflows.
